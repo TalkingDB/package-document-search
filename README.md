@@ -5,6 +5,11 @@ Hybrid document search for TalkingDB: one query is answered by meaning (vector s
 ![Python 3.12 or 3.13](https://img.shields.io/badge/python-3.12%20%7C%203.13-3776AB)
 ![Port 8094](https://img.shields.io/badge/port-8094-555)
 
+<p align="center">
+  <img src="docs/images/demo.gif" alt="Real terminal recording: the example code is shown, then run, and its actual output printed">
+</p>
+<p align="center"><sub>A real run, recorded on 26 Nov 2026 at commit <code>46c8d81</code> with Python 3.13.18: the first example in <a href="docs/usage-and-examples.md">Usage and examples</a>, typed and run in a terminal.</sub></p>
+
 | Start here | Go deeper |
 | :--- | :--- |
 | [Key terms](#key-terms) | [Architecture: storage and ranking](docs/architecture.md) |
@@ -90,6 +95,12 @@ Keyword strength is the BM25 rank rescaled within this result set, so the best k
 - [Milvus documentation](https://milvus.io/docs) and [Milvus Lite](https://milvus.io/docs/milvus_lite.md)
 - [SQLite FTS5](https://www.sqlite.org/fts5.html) and [Okapi BM25](https://en.wikipedia.org/wiki/Okapi_BM25)
 - [OpenAI embeddings guide](https://platform.openai.com/docs/guides/embeddings)
+
+## Support TalkingDB
+
+If package-document-search saved you time, please [give it a star](https://github.com/TalkingDB/package-document-search) ⭐. Stars help other developers find the project.
+
+Found a bug, or a document it gets wrong? [Open an issue](https://github.com/TalkingDB/package-document-search/issues/new). We are always here to help and open to a conversation. Explore the TalkingDB applications at [talkingdb.io](https://talkingdb.io/#applications).
 
 ## License
 
