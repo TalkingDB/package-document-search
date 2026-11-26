@@ -1,0 +1,9 @@
+flowchart LR
+    accTitle: Where package-document-search fits
+    accDescr: package-search-trainer and module-ecommerce-ai send documents and queries through DSClient. Document search stores vectors in Milvus, gets embeddings from OpenAI, and stores keywords in SQLite FTS5.
+    ST["package-search-trainer<br>(crawled pages)"] -- "DSClient" --> DS["package-document-search<br>:8094"]:::here
+    EAI["module-ecommerce-ai<br>(fallback search)"] -- "DSClient" --> DS
+    DS -- "embeddings" --> OAI["OpenAI<br>text-embedding-ada-002"]
+    DS --> MIL[("Milvus<br>vectors")]
+    DS --> FTS[("SQLite FTS5<br>keywords")]
+    classDef here stroke-width:3px
