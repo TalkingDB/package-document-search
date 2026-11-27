@@ -6,9 +6,9 @@ Hybrid document search for TalkingDB: one query is answered by meaning (vector s
 ![Port 8094](https://img.shields.io/badge/port-8094-555)
 
 <p align="center">
-  <img src="docs/images/demo.gif" alt="Real terminal recording: the example code is shown, then run, and its actual output printed">
+  <img src="docs/images/demo.gif" alt="Animated demo of a real run: a vector list and a keyword list are merged; BM25 ranks become match strengths, each document gets one fused score, and the best of both ranks first">
 </p>
-<p align="center"><sub>A real run, recorded on 26 Nov 2026 at commit <code>46c8d81</code> with Python 3.13.18: the first example in <a href="docs/usage-and-examples.md">Usage and examples</a>, typed and run in a terminal.</sub></p>
+<p align="center"><sub>A real run of <code>talkingdb_ds/services/search/ranking.py</code> at <code>46c8d81</code> with Python 3.13.18, 26 Nov 2026.</sub></p>
 
 | Start here | Go deeper |
 | :--- | :--- |
