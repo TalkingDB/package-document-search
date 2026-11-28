@@ -1,0 +1,14 @@
+flowchart TB
+    accTitle: How a hybrid search runs
+    accDescr: The namespace config decides whether vector and keyword search run. Vector search runs only if the namespace exists in Milvus. If keyword search is off or no keyword field is given, vector results are returned as they are. Otherwise keyword results from FTS5 are combined with vector results, scored, filtered to scores above one, and sorted.
+    Q["POST /search"] --> CFG["read namespace config"]
+    CFG --> V{"vector search on<br>and namespace in Milvus?"}
+    V -- yes --> VS["embed query (OpenAI)<br>Milvus search"]
+    V -- no --> VE["no vector results"]
+    VS --> K{"keyword search on<br>and keyword_field given?"}
+    VE --> K
+    K -- no --> R1["return vector results"]
+    K -- yes --> KS["FTS5 search, BM25 rank"]
+    KS --> COMB["combine and score"]
+    COMB --> F["keep score above 1,<br>sort high to low"]
+    F --> R2["return ranked results"]
