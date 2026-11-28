@@ -72,10 +72,17 @@ Turn either kind of search off for a namespace with `PUT /api/namespaces/$NS/con
 The scoring functions are plain Python, so they can be run on their own. This was run on 25 November 2026 against commit `e571768`:
 
 ```python
-from talkingdb_ds.services.search.ranking import combine_and_score_results, sort_and_filter_results_by_score
+from talkingdb_ds.services.search.ranking import (
+    combine_and_score_results,
+    sort_and_filter_results_by_score,
+)
 
 vector = [{"id": "doc-1"}, {"id": "doc-2"}]
-keyword = [{"id": "doc-2", "rank": -9.1}, {"id": "doc-3", "rank": -4.0}, {"id": "doc-4", "rank": -1.2}]
+keyword = [
+    {"id": "doc-2", "rank": -9.1},
+    {"id": "doc-3", "rank": -4.0},
+    {"id": "doc-4", "rank": -1.2},
+]
 
 for row in sort_and_filter_results_by_score(combine_and_score_results(vector, keyword)):
     print(row["id"], row["score"])
@@ -100,7 +107,9 @@ doc-3 1.354
 ```python
 from talkingdb_ds.client import DSClient
 
-client = DSClient()   # CLIENT_MODE=direct by default; set CLIENT_MODE=api and DS_HOST to call a server
+client = (
+    DSClient()
+)  # CLIENT_MODE=direct by default; set CLIENT_MODE=api and DS_HOST to call a server
 ```
 
 ## Further reading
